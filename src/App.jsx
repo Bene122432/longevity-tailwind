@@ -21,63 +21,21 @@ const supplements = [
         image: "/experts/sinclair.jpg",
         brand: "Thorne",
         link: "https://example.com/nmn-thorne"
+      },
+      {
+        name: "Bene",
+        image: "/experts/bene.jpg",
+        brand: "Longevity Hackers",
+        link: "https://www.longevity-hackers.com"
       }
     ]
   },
-  {
-    name: "Ca-AKG (Calcium Alpha-Ketoglutarate)",
-    image: "/supplements/caakg.jpg",
-    description:
-      "Ca-AKG is a form of alpha-ketoglutarate combined with calcium. It plays a vital role in the Krebs cycle and has been studied for its ability to extend lifespan in mice by supporting mitochondrial and bone health.",
-    dosage: "1,000 mg per day",
-    healthTags: ["Longevity", "Bone Health", "Mitochondrial Function"],
-    experts: [
-      {
-        name: "David Sinclair",
-        image: "/experts/sinclair.jpg",
-        brand: "Renue by Science",
-        link: "https://example.com/caakg-renue"
-      }
-    ]
-  },
-  {
-    name: "Berberine",
-    image: "/supplements/berberine.jpg",
-    description:
-      "Berberine is a natural plant alkaloid shown to support healthy blood sugar levels, improve insulin sensitivity, and act as a powerful AMPK activator — often compared to metformin in its metabolic effects.",
-    dosage: "500 mg twice daily",
-    healthTags: ["Blood Sugar Control", "Metabolic Health", "Longevity"],
-    experts: [
-      {
-        name: "Bryan Johnson",
-        image: "/experts/bryan.jpg",
-        brand: "DoNotAge",
-        link: "https://example.com/berberine-dna"
-      }
-    ]
-  },
-  {
-    name: "Magnesium Threonate",
-    image: "/supplements/magnesium-threonate.jpg",
-    description:
-      "Magnesium L-threonate is a unique form of magnesium shown to cross the blood-brain barrier effectively. It may support memory, learning, and overall brain function — especially during aging.",
-    dosage: "1,000 mg per day",
-    healthTags: ["Cognitive Support", "Sleep", "Neurological Health"],
-    experts: [
-      {
-        name: "Peter Attia",
-        image: "/experts/attia.jpg",
-        brand: "Life Extension",
-        link: "https://example.com/mag-threonate"
-      }
-    ]
-  }
-];
 
 const allExperts = [
   "Bryan Johnson",
   "David Sinclair",
-  "Peter Attia"
+  "Peter Attia",
+  "Bene"
 ];
 
 export default function SupplementExplorer() {
@@ -90,7 +48,10 @@ export default function SupplementExplorer() {
     : supplements;
 
   return (
-    <div className="p-6 max-w-7xl mx-auto bg-gray-100 min-h-screen font-sans">
+    <div className="flex items-center justify-between mb-6">
+      <img src="/logo.png" alt="Longevity Hackers Logo" className="h-10 w-auto" />
+    </div>
+    <div className="p-6 max-w-7xl mx-auto bg-gray-100 min-h-screen font-[Avenir,ui-sans-serif]">
       <h1 className="text-5xl font-extrabold mb-6 text-center text-gray-900">Supplements</h1>
       <p className="mb-8 text-gray-600 text-center max-w-3xl mx-auto text-lg">
         Explore the most trusted longevity supplements used by leading health experts. Click a product to view recommended brands and affiliate links.
@@ -156,7 +117,7 @@ export default function SupplementExplorer() {
                   <img
                     src={expert.image}
                     alt={expert.name}
-                    className="w-10 h-10 rounded-full object-cover border"
+                    className="w-10 h-10 rounded-xl object-cover border-2 border-blue-400 shadow-[0_0_10px_2px_rgba(59,130,246,0.5)]"
                   />
                   <div className="text-sm">
                     <p className="font-semibold text-gray-800">{expert.name}</p>
