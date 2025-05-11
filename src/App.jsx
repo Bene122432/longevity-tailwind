@@ -86,7 +86,10 @@ export default function SupplementExplorer() {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-2">Supplements</h1>
+        <div className="flex items-center justify-center mb-2">
+          <img src="/logo.png" alt="Longevity Hackers" className="h-10 mr-2" />
+          <h1 className="text-4xl font-bold text-center">Longevity Hackers</h1>
+        </div>
         <p className="text-center text-gray-600 mb-6">
           Explore the most trusted longevity supplements used by leading health experts. Click a product to view recommended brands and affiliate links.
         </p>
@@ -99,7 +102,7 @@ export default function SupplementExplorer() {
               <img
                 src={expert.image}
                 alt={expert.name}
-                className={`w-16 h-16 rounded-full border-2 ${expert.color} object-cover mb-1`}
+                className={`w-20 h-20 rounded-full border-2 ${expert.color} object-cover mb-1`}
               />
               <span className="text-sm font-medium text-gray-700">{expert.name}</span>
             </div>
