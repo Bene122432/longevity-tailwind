@@ -89,9 +89,6 @@ export default function SupplementExplorer() {
 
   return (
     <>
-      <div className="flex items-center justify-between mb-6">
-        <img src="/logo.png" alt="Longevity Hackers Logo" className="h-10 w-auto" />
-      </div>
       <div className="p-6 max-w-7xl mx-auto bg-gray-100 min-h-screen font-[Avenir,ui-sans-serif]">
         <h1 className="text-5xl font-extrabold mb-6 text-center text-gray-900">Supplements</h1>
         <p className="mb-8 text-gray-600 text-center max-w-3xl mx-auto text-lg">
