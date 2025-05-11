@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const supplements = [
   {
@@ -13,15 +13,15 @@ const supplements = [
         name: "Bryan Johnson",
         image: "/experts/johnson.jpg",
         brand: "Jinfinty",
-        link: "https://example.com/nmn-jinfinty",
+        link: "#"
       },
       {
         name: "David Sinclair",
         image: "/experts/sinclair.png",
         brand: "Thorne",
-        link: "https://example.com/nmn-thorne",
-      },
-    ],
+        link: "#"
+      }
+    ]
   },
   {
     name: "Ca-AKG (Calcium Alpha-Ketoglutarate)",
@@ -35,9 +35,9 @@ const supplements = [
         name: "David Sinclair",
         image: "/experts/sinclair.png",
         brand: "Renue by Science",
-        link: "https://example.com/akg-renue",
-      },
-    ],
+        link: "#"
+      }
+    ]
   },
   {
     name: "Berberine",
@@ -51,57 +51,75 @@ const supplements = [
         name: "Bryan Johnson",
         image: "/experts/johnson.jpg",
         brand: "DoNotAge",
-        link: "https://example.com/berberine-dna",
-      },
-    ],
+        link: "#"
+      }
+    ]
+  }
+];
+
+const expertList = [
+  {
+    name: "Bryan Johnson",
+    image: "/experts/johnson.jpg"
   },
+  {
+    name: "David Sinclair",
+    image: "/experts/sinclair.png"
+  },
+  {
+    name: "Peter Attia",
+    image: "/experts/attia.jpg"
+  },
+  {
+    name: "Andrew Huberman",
+    image: "/experts/huberman.jpg"
+  },
+  {
+    name: "Bene",
+    image: "/experts/bene.jpg"
+  }
 ];
 
 export default function SupplementExplorer() {
-  const [selectedExpert, setSelectedExpert] = useState(null);
-  const filteredSupplements = selectedExpert
-    ? supplements.filter((s) =>
-        s.experts.some((e) => e.name === selectedExpert)
-      )
-    : supplements;
-
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4">Supplements</h1>
-        <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
-          Explore the most trusted longevity supplements used by leading health experts.
-          Click a product to view recommended brands and affiliate links.
+    <div className="bg-gray-100 min-h-screen p-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-2">Supplements</h1>
+        <p className="text-center text-gray-600 mb-6">
+          Explore the most trusted longevity supplements used by leading health experts. Click a product to view recommended brands and affiliate links.
         </p>
-
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {[...new Set(supplements.flatMap((s) => s.experts.map((e) => e.name)))].map((expert) => (
-            <button
-              key={expert}
-              onClick={() => setSelectedExpert(expert === selectedExpert ? null : expert)}
-              className={`px-4 py-2 rounded-full border font-medium ${
-                selectedExpert === expert ? "bg-blue-600 text-white" : "bg-white text-gray-700 border-gray-300"
-              }`}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {expertList.map((expert, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center bg-white px-4 py-2 rounded-full shadow-sm border hover:shadow-md transition"
             >
-              {expert}
-            </button>
+              <img
+                src={expert.image}
+                alt={expert.name}
+                className="w-10 h-10 rounded-full border-2 border-blue-400 shadow-sm object-cover mb-1"
+              />
+              <span className="text-sm font-medium text-gray-700">{expert.name}</span>
+            </div>
           ))}
         </div>
 
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {filteredSupplements.map((supplement, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {supplements.map((supplement, index) => (
             <div
-              key={idx}
-              className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+              key={index}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
             >
               <img
                 src={supplement.image}
                 alt={supplement.name}
-                className="w-full h-40 object-contain rounded-xl border border-gray-200 mb-4"
+                className="w-24 h-24 object-contain mx-auto mb-4"
               />
-              <h2 className="text-xl font-semibold mb-2">{supplement.name}</h2>
-              <p className="text-gray-700 text-sm mb-3">{supplement.description}</p>
-              <p className="text-sm text-gray-600 font-medium mb-3">Dosage: {supplement.dosage}</p>
+              <h2 className="text-xl font-bold mb-2">{supplement.name}</h2>
+              <p className="text-sm text-gray-700 mb-2">{supplement.description}</p>
+              <p className="text-sm text-gray-600 mb-2">
+                <strong>Dosage:</strong> {supplement.dosage}
+              </p>
               <div className="flex flex-wrap gap-2 mb-3">
                 {supplement.healthTags.map((tag, tagIdx) => (
                   <span
@@ -124,7 +142,7 @@ export default function SupplementExplorer() {
                     <img
                       src={expert.image}
                       alt={expert.name}
-                      className="w-10 h-10 rounded-xl object-cover border-2 border-blue-400 shadow-[0_0_10px_2px_rgba(59,130,246,0.5)]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
                     />
                     <div className="text-sm">
                       <p className="font-semibold text-gray-800">{expert.name}</p>
