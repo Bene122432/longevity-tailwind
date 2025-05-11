@@ -162,28 +162,41 @@ export default function SupplementExplorer() {
                       expertList.find(e => e.name === expert.name)?.color ||
                       "border-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]";
                     return (
-                      <a
-                        key={eIdx}
-                        href={expert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-4 border p-3 rounded-lg hover:bg-blue-50"
-                      >
-                        <img
-                          src={expert.image}
-                          alt={expert.name}
-                          className={`w-12 h-12 rounded-full object-cover border-2 ${expertColor}`}
-                        />
-                        <div className="text-sm">
-                          <p className="font-semibold text-gray-800">{expert.name}</p>
-                          <p className="text-gray-500 text-xs">{expert.brand}</p>
-                        </div>
-                      </a>
+                      <div key={eIdx}>
+                        <a
+                          href={expert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-4 border p-3 rounded-lg hover:bg-blue-50"
+                        >
+                          <img
+                            src={expert.image}
+                            alt={expert.name}
+                            className={`w-12 h-12 rounded-full object-cover border-2 ${expertColor}`}
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold text-gray-800">{expert.name}</p>
+                            <p className="text-gray-500 text-xs">{expert.brand}</p>
+                          </div>
+                        </a>
+                        <p className="text-gray-400 text-[11px] italic mt-1">
+                          Hinweis: {expert.name} hat dieses Produkt verwendet oder erwähnt, jedoch keine direkte Empfehlung abgegeben.
+                        </p>
+                      </div>
                     );
                   })}
                 </div>
               </div>
             ))}
+        </div>
+
+        <div className="text-xs text-gray-400 text-center mt-12 max-w-2xl mx-auto">
+          <p className="mb-2">
+            Hinweis: Diese Seite enthält Affiliate-Links. Wenn du über diese Links kaufst, erhalten wir eine kleine Provision – für dich bleibt der Preis gleich. 
+          </p>
+          <p>
+            Die hier gezeigten Persönlichkeiten nutzen oder nannten möglicherweise bestimmte Produkte. Eine direkte Empfehlung oder Kooperation liegt jedoch – sofern nicht explizit erwähnt – nicht vor.
+          </p>
         </div>
       </div>
     </div>
