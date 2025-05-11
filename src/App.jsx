@@ -4,7 +4,7 @@ import "tailwindcss/tailwind.css";
 const supplements = [
   {
     name: "NMN (Nicotinamide Mononucleotide)",
-    image: "/supplements/nmn.jpg",
+    image: "/supplements/nmn.png",
     description:
       "NMN is a precursor to NAD+, a molecule crucial for cellular energy production and DNA repair. Supplementation with NMN may support longevity, metabolic health, and cognitive performance by enhancing NAD+ levels, which decline with age.",
     dosage: "500 mg per day",
@@ -30,7 +30,7 @@ const supplements = [
       },
       {
         name: "Andrew Huberman",
-        image: "/experts/hubermann.jpg",
+        image: "/experts/huberman.jpg",
         brand: "NeuroFuel",
         link: "https://example.com/huberman"
       }
@@ -38,7 +38,7 @@ const supplements = [
   },
   {
     name: "Ca-AKG (Calcium Alpha-Ketoglutarate)",
-    image: "/supplements/ca-akg.jpg",
+    image: "/supplements/ca-akg.webp",
     description:
       "Ca-AKG is a form of alpha-ketoglutarate combined with calcium. It plays a vital role in the Krebs cycle and has been studied for its ability to extend lifespan in mice by supporting mitochondrial and bone health.",
     dosage: "1,000 mg per day",
@@ -54,7 +54,7 @@ const supplements = [
   },
   {
     name: "Berberine",
-    image: "/supplements/berberin.jpg",
+    image: "/supplements/berberin.webp",
     description:
       "Berberine is a natural plant alkaloid shown to support healthy blood sugar levels, improve insulin sensitivity, and act as a powerful AMPK activator — often compared to metformin in its metabolic effects.",
     dosage: "500 mg twice daily",
@@ -174,5 +174,3 @@ export default function SupplementExplorer() {
     </>
   );
 }
-// Refresh to trigger rebuild
-// trigger deploy
