@@ -2,76 +2,80 @@ import React, { useState } from "react";
 
 const supplements = [
   {
-    "name": "NMN",
-    "image": "/supplements/nmn.jpg",
-    "description": "Verwendet von Bryan Johnson laut Quelle (https://www.youtube.com/shorts/GYJTC7REvtw ab 00:00:19).",
-    "healthTags": ["Longevity"],
-    "experts": [
+    name: "NMN",
+    image: "/supplements/nmn.jpg",
+    description: "NMN unterstützt die körpereigene NAD+-Produktion und wird mit verbesserter Energie und Zellgesundheit in Verbindung gebracht.",
+    healthTags: ["Longevity", "Energy", "Cell Repair"],
+    experts: [
       {
-        "name": "Bryan Johnson",
-        "image": "/experts/johnson.jpg",
-        "brand": "Jinfinty – 10% off with code BENE",
-        "link": "https://www.jinfiniti.com/product/vitality-nad-plus-booster-supplement-powder/"
+        name: "Bryan Johnson",
+        image: "/experts/johnson.jpg",
+        brand: "Jinfinty – 10% off with code BENE",
+        link: "https://www.jinfiniti.com/product/vitality-nad-plus-booster-supplement-powder/",
+        note: "Quelle: https://www.youtube.com/shorts/GYJTC7REvtw ab 00:00:19"
       }
     ]
   },
   {
-    "name": "NAC",
-    "image": "/supplements/nac.jpg",
-    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
-    "healthTags": ["Longevity"],
-    "experts": [
+    name: "Spermidin",
+    image: "/supplements/spermidin.jpg",
+    description: "Spermidin fördert die Autophagie – den natürlichen Reinigungsprozess der Zellen – und wird mit gesunder Zellalterung assoziiert.",
+    healthTags: ["Longevity", "Cellular Renewal", "Autophagy"],
+    experts: [
       {
-        "name": "Bryan Johnson",
-        "image": "/experts/johnson.jpg",
-        "brand": "Jinfinty – 10% off with code BENE",
-        "link": "https://iherb.co/hv4eNsnj"
+        name: "Bryan Johnson",
+        image: "/experts/johnson.jpg",
+        brand: "DoNotAge – 10% off with code BENE",
+        link: "https://donotage.org/products/spermidine/",
+        note: "Quelle: https://www.youtube.com/watch?v=pLCRVRxBsd8 ab 00:02:44"
       }
     ]
   },
   {
-    "name": "Knoblauch",
-    "image": "/supplements/knoblauch.jpg",
-    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
-    "healthTags": ["Longevity"],
-    "experts": [
+    name: "Berberin",
+    image: "/supplements/berberin.jpg",
+    description: "Berberin unterstützt den Blutzuckerspiegel, wirkt entzündungshemmend und wird häufig als pflanzliche Alternative zu Metformin betrachtet.",
+    healthTags: ["Metabolic Health", "Blood Sugar", "Inflammation"],
+    experts: [
       {
-        "name": "Bryan Johnson",
-        "image": "/experts/johnson.jpg",
-        "brand": "Jinfinty – 10% off with code BENE",
-        "link": "https://iherb.co/wFhncZQw"
+        name: "Bryan Johnson",
+        image: "/experts/johnson.jpg",
+        brand: "DoNotAge – 10% off with code BENE",
+        link: "https://donotage.org/products/berberine/",
+        note: "Quelle: https://www.youtube.com/watch?v=fG98eDjTS9s ab 00:01:30"
       }
     ]
   },
   {
-    "name": "Boron",
-    "image": "/supplements/boron.jpg",
-    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
-    "healthTags": ["Longevity"],
-    "experts": [
+    name: "Ca-AKG",
+    image: "/supplements/ca-akg.jpg",
+    description: "Calcium-Alpha-Ketoglutarat verlängerte in Tierstudien die Lebensdauer und unterstützt die Mitochondrienfunktion.",
+    healthTags: ["Longevity", "Mitochondria", "Aging"],
+    experts: [
       {
-        "name": "Bryan Johnson",
-        "image": "/experts/johnson.jpg",
-        "brand": "Jinfinty – 10% off with code BENE",
-        "link": "#"
+        name: "Bryan Johnson",
+        image: "/experts/johnson.jpg",
+        brand: "MITOcare",
+        link: "https://www.mitocare.de/",
+        note: "Quelle: https://www.youtube.com/watch?v=7nYEEvD7b4g ab 00:05:22"
       }
     ]
   },
   {
-    "name": "Vitamin D3",
-    "image": "/supplements/vitamin-d3.jpg",
-    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
-    "healthTags": ["Longevity"],
-    "experts": [
+    name: "Resveratrol",
+    image: "/supplements/resveratrol.jpg",
+    description: "Resveratrol ist ein Polyphenol aus Trauben, das mit Sirtuin-Aktivierung und altersbedingten Zellprozessen in Verbindung steht.",
+    healthTags: ["Longevity", "Sirtuins", "Antioxidants"],
+    experts: [
       {
-        "name": "Bryan Johnson",
-        "image": "/experts/johnson.jpg",
-        "brand": "Jinfinty – 10% off with code BENE",
-        "link": "https://iherb.co/rxVpaMfn"
+        name: "Bryan Johnson",
+        image: "/experts/johnson.jpg",
+        brand: "Jinfinty – 10% off with code BENE",
+        link: "https://www.jinfiniti.com/product/resveratrol/",
+        note: "Quelle: https://www.youtube.com/watch?v=2A2KDL9T81c ab 00:03:12"
       }
     ]
   }
-  // ... weitere Supplements im gleichen Stil ...
 ];
 
 const expertList = [
@@ -133,24 +137,6 @@ export default function SupplementExplorer() {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 mb-10">
-          {expertList.map((expert, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center bg-white px-6 py-4 rounded-full shadow-sm border hover:shadow-md transition w-36 h-44 justify-center"
-            >
-              <img
-                src={expert.image}
-                alt={expert.name}
-                className={`w-28 h-28 rounded-full border-4 ${expert.color} object-cover mb-2`}
-              />
-              <span className="text-sm font-medium text-center text-gray-700 leading-tight">
-                {expert.name}
-              </span>
-            </div>
-          ))}
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {supplements
             .filter(s => !selectedTag || s.healthTags.includes(selectedTag))
@@ -188,6 +174,7 @@ export default function SupplementExplorer() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-4 border p-3 rounded-lg hover:bg-blue-50"
+                          title={expert.note || "Diese Angabe basiert auf öffentlichen Quellen."}
                         >
                           <img
                             src={expert.image}
@@ -199,9 +186,6 @@ export default function SupplementExplorer() {
                             <p className="text-gray-500 text-xs">{expert.brand}</p>
                           </div>
                         </a>
-                        <p className="text-gray-400 text-[11px] italic mt-1">
-                          Hinweis: {expert.name} hat dieses Produkt verwendet oder erwähnt, jedoch keine direkte Empfehlung abgegeben.
-                        </p>
                       </div>
                     );
                   })}
@@ -222,3 +206,4 @@ export default function SupplementExplorer() {
     </div>
   );
 }
+
