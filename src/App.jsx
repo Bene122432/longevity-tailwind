@@ -2,56 +2,76 @@ import React, { useState } from "react";
 
 const supplements = [
   {
-    name: "NMN (Nicotinamide Mononucleotide)",
-    image: "/supplements/nmn.png",
-    description:
-      "NMN is a precursor to NAD+, a molecule crucial for cellular energy production and DNA repair. Supplementation with NMN may support longevity, metabolic health, and cognitive performance by enhancing NAD+ levels, which decline with age.",
-    healthTags: ["Longevity", "Energy", "Cognitive Support"],
-    experts: [
+    "name": "NMN",
+    "image": "/supplements/nmn.jpg",
+    "description": "Verwendet von Bryan Johnson laut Quelle (https://www.youtube.com/shorts/GYJTC7REvtw ab 00:00:19).",
+    "healthTags": ["Longevity"],
+    "experts": [
       {
-        name: "Bryan Johnson",
-        image: "/experts/johnson.jpg",
-        brand: "Jinfinty – 10% off with code BENE",
-        link: "#"
-      },
-      {
-        name: "David Sinclair",
-        image: "/experts/sinclair.png",
-        brand: "Thorne",
-        link: "#"
+        "name": "Bryan Johnson",
+        "image": "/experts/johnson.jpg",
+        "brand": "Jinfinty – 10% off with code BENE",
+        "link": "https://www.jinfiniti.com/product/vitality-nad-plus-booster-supplement-powder/"
       }
     ]
   },
   {
-    name: "Ca-AKG (Calcium Alpha-Ketoglutarate)",
-    image: "/supplements/ca-akg.webp",
-    description:
-      "Ca-AKG is a form of alpha-ketoglutarate combined with calcium. It plays a vital role in the Krebs cycle and has been studied for its ability to extend lifespan in mice by supporting mitochondrial and bone health.",
-    healthTags: ["Longevity", "Bone Health", "Mitochondrial Function"],
-    experts: [
+    "name": "NAC",
+    "image": "/supplements/nac.jpg",
+    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
+    "healthTags": ["Longevity"],
+    "experts": [
       {
-        name: "David Sinclair",
-        image: "/experts/sinclair.png",
-        brand: "Renue by Science",
-        link: "#"
+        "name": "Bryan Johnson",
+        "image": "/experts/johnson.jpg",
+        "brand": "Jinfinty – 10% off with code BENE",
+        "link": "https://iherb.co/hv4eNsnj"
       }
     ]
   },
   {
-    name: "Berberine",
-    image: "/supplements/berberin.webp",
-    description:
-      "Berberine is a natural plant alkaloid shown to support healthy blood sugar levels, improve insulin sensitivity, and act as a powerful AMPK activator — often compared to metformin in its metabolic effects.",
-    healthTags: ["Blood Sugar Control", "Metabolic Health", "Longevity"],
-    experts: [
+    "name": "Knoblauch",
+    "image": "/supplements/knoblauch.jpg",
+    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
+    "healthTags": ["Longevity"],
+    "experts": [
       {
-        name: "Bryan Johnson",
-        image: "/experts/johnson.jpg",
-        brand: "DoNotAge – 10% off with code BENE",
-        link: "#"
+        "name": "Bryan Johnson",
+        "image": "/experts/johnson.jpg",
+        "brand": "Jinfinty – 10% off with code BENE",
+        "link": "https://iherb.co/wFhncZQw"
+      }
+    ]
+  },
+  {
+    "name": "Boron",
+    "image": "/supplements/boron.jpg",
+    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
+    "healthTags": ["Longevity"],
+    "experts": [
+      {
+        "name": "Bryan Johnson",
+        "image": "/experts/johnson.jpg",
+        "brand": "Jinfinty – 10% off with code BENE",
+        "link": "#"
+      }
+    ]
+  },
+  {
+    "name": "Vitamin D3",
+    "image": "/supplements/vitamin-d3.jpg",
+    "description": "Verwendet von Bryan Johnson laut Quelle (#).",
+    "healthTags": ["Longevity"],
+    "experts": [
+      {
+        "name": "Bryan Johnson",
+        "image": "/experts/johnson.jpg",
+        "brand": "Jinfinty – 10% off with code BENE",
+        "link": "https://iherb.co/rxVpaMfn"
       }
     ]
   }
+  // ... weitere Supplements im gleichen Stil ...
 ];
 
 const expertList = [
